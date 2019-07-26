@@ -2,8 +2,12 @@
   "context-menu": {
     "atom-text-editor": [
       {
-        "label": "Toggle atom-lsltools",
-        "command": "atom-lsltools:toggle"
+        "label": "Compile",
+        "command": "atom-lsltools:lsl_compile"
+      },
+      {
+          "label": "Export",
+          "command": "atom-lsltools:lsl_export"
       }
     ]
   },
@@ -12,11 +16,15 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "atom-lsltools",
+          "label": "#LSL Tools",
           "submenu": [
             {
-              "label": "Toggle",
-              "command": "atom-lsltools:toggle"
+              "label": "Toggle Console",
+              "command": "atom-lsltools:console_toggle"
+            },
+            {
+              "label": "Test Console",
+              "command": "atom-lsltools:console_test"
             }
           ]
         }
