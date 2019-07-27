@@ -5,6 +5,7 @@
 @import "ui-variables";
 
 @lsltools_console_height: 150px;
+@lsltools_max_project_selector_height: 200px;
 
 // Remove right border of console window.
 atom-panel.bottom {
@@ -31,7 +32,7 @@ atom-panel.bottom {
         margin: 0;
 
         button {
-            background-color: @base-background-color;
+            background-color: @button-background-color;
             border: none;
             height: 14px;
             width: auto;
@@ -43,6 +44,14 @@ atom-panel.bottom {
             font-size: 10px;
             line-height: 1.2;
             text-align: center;
+
+            &:hover {
+                background-color: @button-background-color-hover;
+            }
+
+            &:active {
+                background-color: @button-background-color-selected;
+            }
         }
     }
 
@@ -60,6 +69,83 @@ atom-panel.bottom {
             background-color: @base-background-color;
             height: auto;
             width: inherit;
+        }
+    }
+}
+
+// Project selector
+.atom-lsltools-project-selector {
+    background-color: @base-background-color;
+
+
+    .atom-lsltools-project-selector-headline {
+        background-color: @tool-panel-background-color;
+        border-bottom: 1px solid @tool-panel-border-color;
+        text-align: center;
+        height: 20px;
+        width: inherit;
+        margin: 0;
+
+        button {
+            background-color: @button-background-color;
+            border: none;
+            height: 14px;
+            width: auto;
+            float: right;
+            border-radius: 5px;
+            margin: 3px;
+            margin-left: 1px;
+
+            font-size: 10px;
+            line-height: 1.2;
+            text-align: center;
+
+            &:hover {
+                background-color: @button-background-color-hover;
+            }
+
+            &:active {
+                background-color: @button-background-color-selected;
+            }
+        }
+    }
+
+    .atom-lsltools-project-selector-content-wrapper {
+        height: auto;
+        max-height: @lsltools_max_project_selector_height;
+        width: inherit;
+        margin: 0;
+
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        .atom-lsltools-project-selector-content {
+            background-color: @base-background-color;
+            height: auto;
+            width: inherit;
+
+            button {
+                width: 100%;
+                min-height: 50px;
+                height: auto;
+                background-color: @button-background-color;
+                border-style: solid;
+                border-top-style: none;
+                border-width: 1px;
+                border-color: @button-border-color;
+                text-align: left;
+                font-size: 20px;
+
+                &:hover {
+                    background-color: @button-background-color-hover;
+                }
+
+                &:active {
+                    background-color: @button-background-color-selected;
+                }
+            }
+
         }
     }
 }

@@ -1,34 +1,43 @@
 {
-  "context-menu": {
-    "atom-text-editor": [
-      {
-        "label": "Compile",
-        "command": "atom-lsltools:lsl_compile"
-      },
-      {
-          "label": "Export",
-          "command": "atom-lsltools:lsl_export"
-      }
-    ]
-  },
-  "menu": [
+    "context-menu":
     {
-      "label": "Packages",
-      "submenu": [
-        {
-          "label": "#LSL Tools",
-          "submenu": [
+        "atom-text-editor":
+        [
             {
-              "label": "Toggle Console",
-              "command": "atom-lsltools:console_toggle"
+                "label": "Compile",
+                "command": "atom-lsltools:compile_editor_active"
             },
             {
-              "label": "Test Console",
-              "command": "atom-lsltools:console_test"
+                "label": "Export",
+                "command": "atom-lsltools:lsl_export"
             }
-          ]
+        ]
+    },
+    "menu":
+    [
+        {
+            "label": "Packages",
+            "submenu":
+            [
+                {
+                    "label": "#LSL Tools",
+                    "submenu":
+                    [
+                        {
+                            "label": "Toggle Console",
+                            "command": "atom-lsltools:console_toggle"
+                        },
+                        {
+                            "label": "Set up folder structure",
+                            "command": "atom-lsltools:foldersetup"
+                        },
+                        {
+                            "label": "Compile",
+                            "command": "atom-lsltools:compile_editor_active"
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }

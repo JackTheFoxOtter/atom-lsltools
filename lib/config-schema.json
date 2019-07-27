@@ -1,0 +1,12 @@
+{
+    "pathToCompiler": {
+        "description": "The absolute file path to the lslcomp.exe of Sei-Lisa's LSL-compiler. (https://github.com/Sei-Lisa/LSL-compiler)",
+        "type": "string",
+        "default": ""
+    },
+    "pathToViewerTempFolder": {
+        "description": "The absolute file path to the folder where the viewer creates the temporary .lsl-files of currently opened scripts.",
+        "type": "string",
+        "default": ""
+    }
+}

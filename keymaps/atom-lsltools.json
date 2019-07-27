@@ -1,5 +1,5 @@
 {
   "atom-workspace": {
-    "ctrl-alt-o": "atom-lsltools:toggle"
+    "ctrl-alt-l": "atom-lsltools:test"
   }
 }
