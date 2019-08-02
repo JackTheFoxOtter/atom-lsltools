@@ -19,6 +19,7 @@ atom-panel.bottom {
 
 // Console
 .atom-lsltools-console {
+    color: @text-color;
     background-color: @base-background-color;
     height: @lsltools_console_height;
 
@@ -75,6 +76,7 @@ atom-panel.bottom {
 
 // Project selector
 .atom-lsltools-project-selector {
+    color: @text-color;
     background-color: @base-background-color;
 
 
@@ -143,6 +145,89 @@ atom-panel.bottom {
 
                 &:active {
                     background-color: @button-background-color-selected;
+                }
+            }
+
+        }
+    }
+}
+
+// Instant export
+.atom-lsltools-instant-export {
+    color: @text-color;
+    background-color: @base-background-color;
+
+
+    .atom-lsltools-instant-export-headline {
+        background-color: @tool-panel-background-color;
+        border-bottom: 1px solid @tool-panel-border-color;
+        text-align: center;
+        height: 20px;
+        width: inherit;
+        margin: 0;
+
+        button {
+            background-color: @button-background-color;
+            border: none;
+            height: 14px;
+            width: auto;
+            float: right;
+            border-radius: 5px;
+            margin: 3px;
+            margin-left: 1px;
+
+            font-size: 10px;
+            line-height: 1.2;
+            text-align: center;
+
+            &:hover {
+                background-color: @button-background-color-hover;
+            }
+
+            &:active {
+                background-color: @button-background-color-selected;
+            }
+        }
+    }
+
+    .atom-lsltools-instant-export-content-wrapper {
+        height: auto;
+        max-height: @lsltools_max_project_selector_height;
+        width: inherit;
+        margin: 0;
+
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        .atom-lsltools-instant-export-content {
+            background-color: @base-background-color;
+            height: auto;
+            width: inherit;
+
+            button {
+                width: 100%;
+                min-height: 50px;
+                height: auto;
+                background-color: @button-background-color;
+                border-style: solid;
+                border-top-style: none;
+                border-width: 1px;
+                border-color: @button-border-color;
+                text-align: left;
+                font-size: 20px;
+
+                &:hover {
+                    background-color: @button-background-color-hover;
+                }
+
+                &:active {
+                    background-color: @button-background-color-selected;
+                }
+
+                div {
+                    font-size: 12px;
+                    color: @text-color-subtle;
                 }
             }
 

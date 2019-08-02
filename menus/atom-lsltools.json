@@ -4,12 +4,12 @@
         "atom-text-editor":
         [
             {
-                "label": "Compile",
+                "label": "Compile LSL",
                 "command": "atom-lsltools:compile_editor_active"
             },
             {
-                "label": "Export",
-                "command": "atom-lsltools:lsl_export"
+                "label": "Export to Viewer",
+                "command": "atom-lsltools:export_editor_active"
             }
         ]
     },
@@ -32,8 +32,12 @@
                             "command": "atom-lsltools:foldersetup"
                         },
                         {
-                            "label": "Compile",
+                            "label": "Compile LSL",
                             "command": "atom-lsltools:compile_editor_active"
+                        },
+                        {
+                            "label": "Export to Viewer",
+                            "command": "atom-lsltools:export_editor_active"
                         }
                     ]
                 }
