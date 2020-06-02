@@ -235,6 +235,272 @@ atom-panel.bottom {
     }
 }
 
+// Overlay
+.atom-lsltools-overlay {
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 14px -2px black;
+    color: @text-color;
+    background-color: @base-background-color;
+    cursor: default;
+
+    .atom-lsltools-overlay-headline {
+        display: inline-block;
+        font-size: 22px;
+    }
+
+    .atom-lsltools-overlay-content-wrapper {
+        //width: set programatically: max(600px, title.width)
+        max-height: 400px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        // Spinner animation for async loading
+        .atom-lsltools-lds-ellipsis {
+            // TODO: [BUG-002] - Last circle in loading animation flickers to a square sometimes
+            clear: both;
+            float: left;
+            display: inline-block;
+            height: 12px;
+            margin-top: 5px;
+
+            & div {
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                margin-left: calc(50% - 6px);
+                background: @text-color;
+                animation-timing-function: cubic-bezier(0, 1, 1, 0);
+            }
+
+            & div:nth-child(1) {
+                left: 0px;
+                animation: lds-ellipsis1 0.6s infinite;
+            }
+
+            & div:nth-child(2) {
+                left: 0px;
+                animation: lds-ellipsis2 0.6s infinite;
+            }
+
+            & div:nth-child(3) {
+                left: 24px;
+                animation: lds-ellipsis2 0.6s infinite;
+            }
+
+            & div:nth-child(4) {
+                left: 48px;
+                animation: lds-ellipsis3 0.6s infinite;
+            }
+
+            @keyframes lds-ellipsis1 {
+                0% {
+                    transform: scale(0);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+            @keyframes lds-ellipsis3 {
+                0% {
+                    transform: scale(1);
+                }
+                100% {
+                    transform: scale(0);
+                }
+            }
+            @keyframes lds-ellipsis2 {
+                0% {
+                    transform: translate(0, 0);
+                }
+                100% {
+                    transform: translate(24px, 0);
+                }
+            }
+        }
+
+        .atom-lsltools-overlay-data-container {
+            // display: inline-block;
+            clear: both;
+            float: left;
+            box-shadow: 0 0 0 1px @tool-panel-border-color;
+            border-radius: 3px;
+            margin: 1px;
+            padding: 1px;
+            margin-top: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            background-color: @tool-panel-background-color;
+            font-size: 14px;
+            color: gray;
+
+            & > span {
+                float: right;
+                // margin-right: -5px;
+                font-size: 14px;
+                color: gray;
+
+                &.atom-lsltools-status-godmode > span {
+                    color: rgb(255, 64, 255);
+                }
+
+                &.atom-lsltools-status-deprecated > span {
+                    color: rgb(255, 128, 64);
+                }
+
+                &.atom-lsltools-status-unimplemented > span {
+                    color: rgb(255, 64, 64);
+                }
+
+                &.atom-lsltools-status-error > span {
+                    color: rgb(255, 64, 64);
+                    animation: error-highlight 0.6s infinite;
+
+                    @keyframes error-highlight {
+                        0% {
+                            color: rgb(128, 64, 64);
+                        }
+                        50% {
+                            color: rgb(255, 64, 64);
+                        }
+                        100% {
+                            color: rgb(128, 64, 64);
+                        }
+                    }
+
+                }
+
+                & ~ span { // Only add negative margin if next to icon
+                    margin-right: -8px;
+                }
+            }
+
+            &.atom-lsltools-kwdb-data {
+                border-left: solid 10px rgb(64, 128, 128);
+            }
+
+            &.atom-lsltools-slwiki-data {
+                border-left: solid 10px rgb(128, 128, 64);
+            }
+
+            &.atom-lsltools-user-specific-data {
+                border-left: solid 10px rgb(128, 64, 128);
+            }
+
+            &.atom-lsltools-generic-data {
+                border-left: solid 10px rgb(64, 64, 64);
+            }
+
+            .icon {
+                float: right;
+                margin-right: -8px;
+                margin-left: 15px;
+                margin-top: 1px;
+                color: rgb(164, 164, 128);
+                cursor: pointer;
+
+                &:hover {
+                    color: gray;
+                }
+
+                &:active {
+                    color: @button-background-color-selected;
+                }
+            }
+
+            .atom-lsltools-overlay-data-description {
+                clear: both;
+                float: left;
+                padding-top: 5px;
+                font-size: 16px;
+                white-space: pre-line;
+                color: @text-color;
+            }
+
+            // Add spacing only if sibling
+            .atom-lsltools-overlay-data-description + .atom-lsltools-overlay-data-type-value {
+                padding-top: 5px;
+            }
+
+            .atom-lsltools-overlay-data-description + .atom-lsltools-overlay-data-parameters {
+                padding-top: 8px;
+            }
+
+            .atom-lsltools-overlay-data-type-value {
+                clear: both;
+                float: left;
+
+                & > span {
+                    color: rgb(164, 164, 128);
+                    font-style: italic;
+                }
+            }
+
+            .atom-lsltools-overlay-data-parameters {
+                clear: both;
+                float: left;
+                margin-top: -5px;
+                font-size: 14px;
+                color: gray;
+
+                & > table tr td:first-child {
+                    float: right;
+                    padding-left: 20px;
+                    color: rgb(164, 164, 128);
+                    font-style: italic;
+                }
+
+                &  > table tr td:nth-child(2) {
+                    padding-left: 10px;
+                    color: @text-color;
+                    font-style: normal;
+                }
+            }
+        }
+    }
+}
+
+.lsltools-notification-progress-bar-spacer {
+    width: 100%;
+    height: 1px;
+}
+
+.lsltools-notification-progress-bar-container {
+    height: 14px;
+    background-color: lighten(@background-color-info, 20%);
+    border-radius: 8px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding: 2px;
+    overflow: hidden;
+
+    .lsltools-notification-progress-bar {
+        height: 10px;
+        border-radius: 6px;
+        transition: width 0.6s ease;
+
+        background-image: linear-gradient(
+            135deg,
+            @background-color-info               25%,
+            lighten(@background-color-info, 10%) 25%,
+            lighten(@background-color-info, 10%) 50%,
+            @background-color-info               50%,
+            @background-color-info               75%,
+            lighten(@background-color-info, 10%) 75%,
+            lighten(@background-color-info, 10%) 100%
+        );
+        background-size: 80px 80px;
+        animation: bganim 0.8s linear infinite;
+
+        @keyframes bganim {
+            from {background-position:0px;} to { background-position:80px;}
+        }
+    }
+}
+
+
+
 // ToDo: Make this work for only the console scrollbar
 /*
 .scrollbars-visible-always {

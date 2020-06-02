@@ -32,6 +32,10 @@
                             "command": "atom-lsltools:foldersetup"
                         },
                         {
+                            "label": "Reload all external assets",
+                            "command": "atom-lsltools:reload_external_assets"
+                        },
+                        {
                             "label": "Compile LSL",
                             "command": "atom-lsltools:compile_editor_active"
                         },

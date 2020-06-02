@@ -12,7 +12,8 @@
             "atom-lsltools:compile_treeview_selected",
             "atom-lsltools:export_editor_active",
             "atom-lsltools:export_treeview_selected",
-            "atom-lsltools:test"
+            "atom-lsltools:test",
+            "atom-lsltools:context_documentation"
         ]
     },
     "repository": "https://github.com/atom/atom-lsltools",
