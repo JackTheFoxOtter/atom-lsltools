@@ -3,6 +3,7 @@
 Integrates functionality to make working with the 'Linden Scripting Language' (LSL) for Second Life more comfortable.
 
 ## Core Features:
++ Build-in context documentation system which fetches information for function/keyword from multiple sources (including the SL wiki)
 + Directly integrates support for external script compilers like [Sei-Lisa's LSL compiler](https://github.com/Sei-Lisa/LSL-compiler)
 + Includes preprocessing system that can be used to extend the base language (unfinished)
 + 'Instant export' feature which allows to instantly(\*) export a script into a script opened inside the game
