@@ -42,6 +42,10 @@
                         {
                             "label": "Export to Viewer",
                             "command": "atom-lsltools:export_editor_active"
+                        },
+                        {
+                            "label": "Switch user",
+                            "command": "atom.lsltools:switch_user"
                         }
                     ]
                 }
